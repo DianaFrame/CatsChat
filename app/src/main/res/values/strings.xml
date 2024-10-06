@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CatsChat</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="game">Game</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="left">◄</string>
     <string name="right">►</string>
