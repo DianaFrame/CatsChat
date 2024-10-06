@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "CatsChat"
 include(":app")
+include(":domain")
+include(":data")

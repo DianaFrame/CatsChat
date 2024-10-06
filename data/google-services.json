@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "625743499669",
+    "firebase_url": "https://catschat-e17d8-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "catschat-e17d8",
+    "storage_bucket": "catschat-e17d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625743499669:android:cc68250a8e81a11291669c",
+        "android_client_info": {
+          "package_name": "com.example.catschat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625743499669-7nau6f69r20fggodr0sog3llqgr38h48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.catschat",
+            "certificate_hash": "85852b1d2676e35e134064cb99522e4ae84dc815"
+          }
+        },
+        {
+          "client_id": "625743499669-u5lfbr7e22frspetuvu4mn21ccfdf31q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA83Hd4z0-ziycMNMcKOyxD_AWqcQN7w1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625743499669-u5lfbr7e22frspetuvu4mn21ccfdf31q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
