@@ -5,15 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.catschat.R
+import com.example.catschat.databinding.FragmentForgotPasswordBinding
 
 class ForgotPasswordFragment : Fragment() {
+
+    private lateinit var binding: FragmentForgotPasswordBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forgot_password, container, false)
+    ): View {
+        binding = FragmentForgotPasswordBinding.inflate(inflater)
+        return binding.root
     }
 
     companion object {
