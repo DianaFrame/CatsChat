@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".fragments.ChatFragment">
+    tools:context=".fragments.AuthUserFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerViewAuthUser"

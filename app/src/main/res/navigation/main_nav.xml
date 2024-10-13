@@ -17,8 +17,8 @@
             android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
+            android:id="@+id/action_signInFragment_to_authUserFragment"
+            app:destination="@id/authUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -26,8 +26,8 @@
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
-            android:id="@+id/action_registrationFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
+            android:id="@+id/action_registrationFragment_to_authUserFragment"
+            app:destination="@id/authUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -35,12 +35,16 @@
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
-            android:id="@+id/action_forgotPasswordFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
+            android:id="@+id/action_forgotPasswordFragment_to_authUserFragment"
+            app:destination="@id/authUserFragment" />
     </fragment>
     <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.example.catschat.fragments.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+        android:id="@+id/authUserFragment"
+        android:name="com.example.catschat.fragments.AuthUserFragment"
+        android:label="fragment_auth_user"
+        tools:layout="@layout/fragment_auth_user" >
+        <action
+            android:id="@+id/action_authUserFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
 </navigation>

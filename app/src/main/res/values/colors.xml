@@ -4,5 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#F6D4A0</color>
     <color name="button_background">#785934</color>
+    <color name="other_user_background">#785934</color>
     <color name="color_text">#433015</color>
+    <color name="status_color">#1BDB30</color>
+    <color name="auth_user_message_background">#A69052</color>
 </resources>
