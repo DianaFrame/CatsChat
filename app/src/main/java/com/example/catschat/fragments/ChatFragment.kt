@@ -2,6 +2,7 @@ package com.example.catschat.fragments
 
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -172,6 +173,33 @@ class ChatFragment : Fragment(), MessageListener {
                         time
                     )
                 )
+            dataRef.child(currentUserId!!).addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val currentUser = snapshot.getValue(UserItem::class.java)
+                    dataRef
+                        .child(selectUser.id)
+                        .child(Constants.CHATS_REF)
+                        .child(currentUserId!!)
+                        .child(Constants.INFORMATION_FOR_CHAT_LIST_REF)
+                        .setValue(
+                            ChatsItem(
+                                currentUserId,
+                                currentUser?.name,
+                                currentUser?.status,
+                                currentUser?.avatarNumber,
+                                message,
+                                time
+                            )
+                        )
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                }
+
+            })
+
         }
     }
 

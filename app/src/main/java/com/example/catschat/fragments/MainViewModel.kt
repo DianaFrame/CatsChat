@@ -2,10 +2,10 @@ package com.example.catschat.fragments
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.catschat.recycler_chats.ChatsItem
 import com.example.catschat.recycler_users.UserItem
 
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
+
     val selectUser: MutableLiveData<UserItem> by lazy {
         MutableLiveData<UserItem>()
     }
