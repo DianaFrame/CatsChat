@@ -22,11 +22,11 @@
             android:padding="16dp">
 
             <EditText
-                android:id="@+id/edLogin"
+                android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:ems="10"
-                android:hint="@string/sign_in_login"
+                android:hint="@string/enter_email"
                 android:inputType="text" />
 
             <EditText

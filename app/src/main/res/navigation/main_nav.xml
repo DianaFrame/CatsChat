@@ -46,5 +46,29 @@
         <action
             android:id="@+id/action_authUserFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_authUserFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_authUserFragment_to_addChatFragment"
+            app:destination="@id/addChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addChatFragment"
+        android:name="com.example.catschat.fragments.AddChatFragment"
+        android:label="fragment_add_chat"
+        tools:layout="@layout/fragment_add_chat" >
+        <action
+            android:id="@+id/action_addChatFragment_to_authUserFragment"
+            app:destination="@id/authUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.catschat.fragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chatFragment_to_authUserFragment"
+            app:destination="@id/authUserFragment" />
     </fragment>
 </navigation>

@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/chatsFragment"
-        android:name="com.example.catschat.fragments.ChatsFragment"
+        android:name="com.example.catschat.fragments.ChatListFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_chats" >
+        tools:layout="@layout/fragment_chat_list" >
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />

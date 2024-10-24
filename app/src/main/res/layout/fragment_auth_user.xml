@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".fragments.AuthUserFragment">
 
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerViewAuthUser"
         android:name="androidx.navigation.fragment.NavHostFragment"

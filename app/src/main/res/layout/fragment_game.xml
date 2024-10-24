@@ -1,6 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.GameFragment"/>
+    android:gravity="center">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/game_image1"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/game_image2"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image4"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/game_image3"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image5"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image1"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image6"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image5"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image7"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image6"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image8"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image1"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image7"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image9"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image5"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image10"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image5"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image9"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image11"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image5"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image10"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image12"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image5"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image11"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image13"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image9"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image14"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image9"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image13"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image15"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image9"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image14"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game_image16"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/game_image9"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/game_image15"
+        app:cardBackgroundColor="@color/card_for_game_background"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/card" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
