@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.catschat.Constants
 import com.example.catschat.R
@@ -36,7 +35,7 @@ class ChatListFragment : Fragment(), ChatListener, MenuProvider {
     private val adapter: ChatAdapter by lazy { ChatAdapter(this) }
     private lateinit var auth: FirebaseAuth
     private val viewModel: MainViewModel by activityViewModels()
-    private var  currentUserId: String? = null
+    private var currentUserId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,36 +72,41 @@ class ChatListFragment : Fragment(), ChatListener, MenuProvider {
         viewModel.selectUser.value = userItem
         viewModel.openChat.value = true
     }
+
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
     }
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-        when(menuItem.itemId){
-            R.id.sign_out->{
+        when (menuItem.itemId) {
+            R.id.sign_out -> {
                 auth.signOut()
                 viewModel.signOut.value = true
                 Toast.makeText(context, "Sign out", Toast.LENGTH_SHORT).show()
             }
-            R.id.add_chat->{
+
+            R.id.add_chat -> {
                 viewModel.addChat.value = true
                 Toast.makeText(context, "New chat", Toast.LENGTH_SHORT).show()
             }
         }
         return true
     }
-    private fun getChatList(dataRef: DatabaseReference){
+
+    private fun getChatList(dataRef: DatabaseReference) {
         dataRef
             .child(currentUserId!!)
             .child(Constants.CHATS_REF)
-            .addValueEventListener( object : ValueEventListener{
+            .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val chats = ArrayList<ChatsItem>()
-                    for(s in snapshot.children){
+                    for (s in snapshot.children) {
                         val chat = s
                             .child(Constants.INFORMATION_FOR_CHAT_LIST_REF)
                             .getValue(ChatsItem::class.java)
-                        if(chat != null) chats.add(chat)
+                        if (chat != null) {
+                            chats.add(chat)
+                        }
                     }
                     adapter.submitList(chats)
                 }

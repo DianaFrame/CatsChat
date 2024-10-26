@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.catschat.Constants
 import com.example.catschat.R
@@ -21,7 +20,6 @@ import com.google.firebase.ktx.Firebase
 class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
     private lateinit var auth: FirebaseAuth
-    private val viewModel: MainViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

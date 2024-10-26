@@ -2,7 +2,6 @@ package com.example.catschat.fragments
 
 import android.icu.util.Calendar
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -82,7 +81,7 @@ class ChatFragment : Fragment(), MessageListener {
     }
 
     private fun sendMessage(databaseRef: DatabaseReference) = with(binding) {
-        val message = edMessage.text.toString()
+        val message = edMessage.text.toString().trim()
         val time = getCurrentTime()
         if (message != "") {
             selectUser?.let { selectUser ->
@@ -147,6 +146,9 @@ class ChatFragment : Fragment(), MessageListener {
                             }
                         }
                         adapter.submitList(messages)
+                        binding.rcMessages.post {
+                            binding.rcMessages.scrollToPosition(0)
+                        }
                     }
 
                     override fun onCancelled(error: DatabaseError) {
@@ -173,32 +175,80 @@ class ChatFragment : Fragment(), MessageListener {
                         time
                     )
                 )
-            dataRef.child(currentUserId!!).addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val currentUser = snapshot.getValue(UserItem::class.java)
-                    dataRef
-                        .child(selectUser.id)
-                        .child(Constants.CHATS_REF)
-                        .child(currentUserId!!)
-                        .child(Constants.INFORMATION_FOR_CHAT_LIST_REF)
-                        .setValue(
-                            ChatsItem(
-                                currentUserId,
-                                currentUser?.name,
-                                currentUser?.status,
-                                currentUser?.avatarNumber,
-                                message,
-                                time
+
+            dataRef.child(currentUserId!!)
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val senderUser = snapshot.getValue(UserItem::class.java)
+                        dataRef
+                            .child(selectUser.id)
+                            .child(Constants.CHATS_REF)
+                            .child(currentUserId!!)
+                            .child(Constants.INFORMATION_FOR_CHAT_LIST_REF)
+                            .setValue(
+                                ChatsItem(
+                                    senderUser?.id,
+                                    senderUser?.name,
+                                    senderUser?.status,
+                                    senderUser?.avatarNumber,
+                                    message,
+                                    time
+                                )
                             )
-                        )
+                    }
 
-                }
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-                }
+                })
+            updateStatus(dataRef)
 
-            })
+        }
+    }
+
+    private fun updateStatus(dataRef: DatabaseReference) {
+        selectUser?.let { selectUser ->
+            dataRef.child(selectUser.id!!)
+                .addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val receiverUser = snapshot.getValue(UserItem::class.java)
+                        dataRef
+                            .child(currentUserId!!)
+                            .child(Constants.CHATS_REF)
+                            .child(selectUser.id)
+                            .child(Constants.INFORMATION_FOR_CHAT_LIST_REF)
+                            .child("status")
+                            .setValue(
+                                receiverUser?.status
+                            )
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                    }
+
+                })
+            dataRef.child(currentUserId!!)
+                .addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val senderUser = snapshot.getValue(UserItem::class.java)
+                        dataRef
+                            .child(selectUser.id)
+                            .child(Constants.CHATS_REF)
+                            .child(currentUserId!!)
+                            .child(Constants.INFORMATION_FOR_CHAT_LIST_REF)
+                            .child("status")
+                            .setValue(
+                                senderUser?.status
+                            )
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                    }
+
+                })
 
         }
     }
